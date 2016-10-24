@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9]*)/([a-zA-Z0-9]*)$ index.php?sitecontroller=$1&sitemethod=$2 [NC]
+RewriteRule ^([a-zA-Z0-9]*)/([a-zA-Z0-9]*)/([&a-zA-Z0-9_=]*)$ index.php?sitecontroller=$1&sitemethod=$2&param=$3
+
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+Options All -Indexes

@@ -1,0 +1,129 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <a href="/---ROOT-----/">
+                Home
+            </a>
+        </li>
+        <li class="active">
+            SignUp
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6">
+        </div>
+        <div class="col-sm-6 col-sm-offset-1">
+            <div class="login-box visible widget-box no-border" id="login-box">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            Signup for QuantoxCode
+                        </h4>
+                        <div ng-class="{' space-16' : vm.message.user}" ng-if="vm.message.user">
+                            <h4>
+                                {{vm.message.user}}
+                            </h4>
+                        </div>
+                        <form class="form-horizontal" name="signupForm" ng-submit="vm.register(user)" role="form">
+                            <div class="form-group" ng-class="{' has-error' : vm.message.email}">
+                                <label class="col-sm-5 control-label no-padding-right" for="email">
+                                    Email
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" focus="" name="email" ng-model="user.email" placeholder="Email" type="text"/>
+                                        <span class="help-block" ng-if="vm.message.email">
+                                            <strong>
+                                                {{vm.message.email}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{' has-error' : vm.message.password}">
+                                <label class="col-sm-5 control-label no-padding-right" for="password">
+                                    Password
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" name="password" ng-model="user.password" placeholder="Password" type="password"/>
+                                        <span class="help-block" ng-if="vm.message.password">
+                                            <strong>
+                                                {{vm.message.password}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{' has-error' : vm.message.password}">
+                                <label class="col-sm-5 control-label no-padding-right" for="password2">
+                                    Confirm Password
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" name="password2" ng-model="user.password2" placeholder="Password Again" type="password"/>
+                                        <span class="help-block" ng-if="vm.message.password">
+                                            <strong>
+                                                {{vm.message.password}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{' has-error' : vm.message.name}">
+                                <label class="col-sm-5 control-label no-padding-right" for="name">
+                                    Name
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" ng-model="user.name" placeholder="Name" type="text"/>
+                                        <span class="help-block" ng-if="vm.message.name">
+                                            <strong>
+                                                {{vm.message.name}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{' has-error' : vm.message.salarie}">
+                                <label class="col-sm-5 control-label no-padding-right" for="salarie">
+                                    Salarie
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" ng-model="user.salarie" placeholder="Salarie" type="text"/>
+                                        <span class="help-block" ng-if="vm.message.salarie">
+                                            <strong>
+                                                {{vm.message.salarie}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <span class="lbl col-sm-5">
+                                </span>
+                                <div class="col-sm-7">
+                                    <button class="width-35 pull-right btn btn-sm btn-primary" type="submit">
+                                        Sign Up
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<span class="lbl col-sm-5">
+</span>
+<div class="col-sm-7">
+    Already have an account?
+    <a href="/---ROOT-----/login">
+        SignIn
+    </a>
+</div>
+<!-- /.page-content -->

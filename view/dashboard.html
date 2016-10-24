@@ -1,0 +1,134 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li>
+            <i class="ace-icon fa fa-home home-icon">
+            </i>
+            <a href="/---ROOT-----/">
+                Home
+            </a>
+        </li>
+        <li class="active">
+            Dashboard
+        </li>
+        <div class="col-lg-6 search-head">
+            <form class="" ng-submit="vm.getUsers()" role="search">
+                <div class="input-group">
+                    <input class="form-control" ng-model="vm.search" placeholder="Search for..." type="text">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-disabled="!vm.search" type="submit">
+                                <i aria-hidden="true" class="fa fa-search">
+                                </i>
+                            </button>
+                        </span>
+                    </input>
+                </div>
+            </form>
+        </div>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row blue-title">
+        <div class="space-6">
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="login-box visible widget-box no-border" id="login-box">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            <i class="icon-coffee green">
+                            </i>
+                            User Authenticated
+                        </h4>
+                        <div class="space-16">
+                        </div>
+                        <br/>
+                        NAME: {{vm.loged.name}}
+                        <br/>
+                        E-MAIL: {{vm.loged.email}}
+                        <br/>
+                        <a ng-click="vm.logout();">
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="message" ng-cloak="" ng-if="vm.query">
+            <h4>
+                (
+                <b>
+                    {{vm.query}}
+                </b>
+                )
+            </h4>
+        </span>
+    </div>
+    <div class="row">
+        <div class="bs-example" data-example-id="panel-without-body-with-table">
+            <div class="panel">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th ng-click="vm.order('user_id')">
+                                ID
+                                <span class="fa" ng-class="vm.reverse? 'fa-sort-amount-desc':'fa-sort-amount-asc'" ng-show="vm.predicate === 'user_id'">
+                                </span>
+                            </th>
+                            <th ng-click="vm.order('name')">
+                                Name
+                                <span class="fa " ng-class="vm.reverse? 'fa-sort-amount-desc':'fa-sort-amount-asc'" ng-show="vm.predicate === 'name'">
+                                </span>
+                            </th>
+                            <th ng-click="vm.order('email')">
+                                Email
+                                <span class="fa " ng-class="vm.reverse? 'fa-sort-amount-desc':'fa-sort-amount-asc'" ng-show="vm.predicate === 'email'">
+                                </span>
+                            </th>
+                            <th ng-click="vm.order('created_at')">
+                                Created
+                                <span class="fa" ng-class="vm.reverse? 'fa-sort-amount-desc':'fa-sort-amount-asc'" ng-show="vm.predicate === 'created_at'">
+                                </span>
+                            </th>
+                            <th ng-click="vm.order('updated_at')">
+                                Updated
+                                <span class="fa" ng-class="vm.reverse? 'fa-sort-amount-desc':'fa-sort-amount-asc'" ng-show="vm.predicate === 'updated_at'">
+                                </span>
+                            </th>
+                            <th ng-click="vm.order('salarie')">
+                                Salarie
+                                <span class="fa" ng-class="vm.reverse? 'fa-sort-amount-desc':'fa-sort-amount-asc'" ng-show="vm.predicate === 'salarie'">
+                                </span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-cloak="" ng-repeat="user in vm.users | toArrayFilter:true | filter:vm.search | orderBy:vm.predicate:vm.reverse">
+
+                            <th scope="row">
+                                {{user.user_id}}
+                            </th>
+                            <td>
+                                {{user.name}}
+                            </td>
+                            <td>
+                                {{user.email}}
+                            </td>
+                            <td>
+                                {{user.created_at}}
+                            </td>
+                            <td>
+                                {{user.updated_at}}
+                            </td>
+                            <td>
+                                <span aria-hidden="true" class="fa fa-eur">
+                                </span>
+                                {{user.salarie | number}}
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.page-content -->

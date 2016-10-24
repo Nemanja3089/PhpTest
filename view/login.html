@@ -1,0 +1,117 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li class="active">
+            <i class="ace-icon fa fa-home home-icon">
+            </i>
+            <a href="/---ROOT-----/">
+                Home
+            </a>
+        </li>
+        <li class="active">
+            Login
+        </li>
+    </ul>
+</div>
+<div class="page-content">
+    <div class="row">
+        <div class="space-6">
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="login-box visible widget-box no-border" id="login-box">
+                <div class="widget-body">
+                    <div class="widget-main">
+                        <h4 class="header blue lighter bigger">
+                            <i class="icon-coffee green">
+                            </i>
+                            Login to QuantoxCode
+                        </h4>
+                        <div ng-class="{' space-16' : vm.message.user}" ng-if="vm.message.user">
+                            <h4>
+                                {{vm.message.user}}
+                            </h4>
+                        </div>
+                        <form class="form-horizontal" name="loginForm" ng-submit="vm.login(login)" role="form">
+                            <div class="form-group" ng-class="{' has-error' : vm.message.name}">
+                                <label class="col-sm-3 control-label no-padding-right" for="name">
+                                    Name
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" focus="" name="user[name]" ng-model="login.name" placeholder="Name" required="" type="text"/>
+                                        <span class="help-block" ng-if="vm.message.name">
+                                            <strong>
+                                                {{vm.message.name}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{' has-error' : vm.message.email}">
+                                <label class="col-sm-3 control-label no-padding-right" for="email">
+                                    Email
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" focus="" name="user[email]" ng-model="login.email" placeholder="Email" type="text"/>
+                                        <span class="help-block" ng-if="vm.message.email">
+                                            <strong>
+                                                {{vm.message.email}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group" ng-class="{' has-error' : vm.message.password}">
+                                <label class="col-sm-3 control-label no-padding-right" for="password">
+                                    Password
+                                </label>
+                                <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                        <input class="form-control" name="user[password]" ng-model="login.password" placeholder="Password" type="password"/>
+                                        <span class="help-block" ng-if="vm.message.password">
+                                            <strong>
+                                                {{vm.message.password}}
+                                            </strong>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="space">
+                            </div>
+                            <div class="clearfix">
+                                <div class="row">
+                                    <label class="col-sm-3 control-label no-padding-right">
+                                    </label>
+                                    <div class="col-sm-7">
+                                        <button class="width-35 pull-right btn btn-sm btn-primary" data-ng-disabled="" type="submit">
+                                            <i class="ace-icon fa fa-key">
+                                            </i>
+                                            Login
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="space-4">
+                            </div>
+                            <span class="lbl col-sm-3">
+                            </span>
+                            <div class="col-sm-7">
+                                Don't have an account?
+                                <a href="/---ROOT-----/registration">
+                                    Signup
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /widget-main -->
+                </div>
+                <!-- /widget-body -->
+            </div>
+            <!-- /login-box -->
+        </div>
+        <!-- /position-relative -->
+    </div>
+</div>
+<!-- /.page-content -->
+<script src="../js/login.js">
+</script>

@@ -1,0 +1,62 @@
+<div class="breadcrumbs" id="breadcrumbs">
+    <ul class="breadcrumb">
+        <li class="active">
+            <i aria-hidden="true" class="fa fa-user">
+            </i>
+            <a href="/---ROOT-----/login/">
+                Login
+            </a>
+        </li>
+        <li class="active">
+            <i aria-hidden="true" class="fa fa-user-plus">
+            </i>
+            <a href="/---ROOT-----/registration/">
+                Register
+            </a>
+        </li>
+        <li class="active" ng-if="vm.user">
+            <i aria-hidden="true" class="fa fa-search">
+            </i>
+            <a href="/---ROOT-----/dashboard/">
+                Dashboard
+            </a>
+        </li>
+        <div class="col-lg-6 search-head">
+            <form class="" ng-submit="vm.redirect()" role="search">
+                <div class="input-group">
+                    <input class="form-control" ng-model="vm.search" placeholder="Search for..." type="text">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" ng-disabled="!vm.search" type="submit">
+                                <i aria-hidden="true" class="fa fa-search">
+                                </i>
+                            </button>
+                        </span>
+                    </input>
+                </div>
+            </form>
+        </div>
+    </ul>
+</div>
+<div class="row" ng-if="!vm.error">
+    <div class="jumbotron text-center">
+        <h1>
+            Quantox test
+        </h1>
+        <span class="label">
+            Name: Admin
+        </span>
+        <span class="label">
+            Email: admin@admin.com
+        </span>
+        <span class="label">
+            Pass: 123
+        </span>
+    </div>
+</div>
+<div class="row " ng-if="vm.error">
+    <div class="jumbotron text-center">
+        <h4>
+            {{vm.error}}
+        </h4>
+    </div>
+</div>
